@@ -9,6 +9,7 @@ import '../features/admin/admin-page';
 import '../features/home/home-page';
 import '../features/location/locations-page';
 import '../features/file/file-page';
+import '../features/tabs/tabs-page';
 
 import '../components/wsa-env-label';
 
@@ -44,6 +45,7 @@ export class AppElement extends LitElement {
         { path: '/locations', component: 'wsa-locations-page' },
         { path: '/location/:locationId', component: 'wsa-location-page' },
         { path: '/file', component: 'wsa-file-page' },
+        { path: '/tabs', component: 'wsa-tabs-page' },
       ]);
 
       let iconButtonRipple = new MDCRipple(this.shadowRoot.getElementById('menu') as HTMLElement);
@@ -126,6 +128,11 @@ export class AppElement extends LitElement {
             <a class="mdc-list-item" href="/file">
               <i class="material-icons mdc-list-item__graphic wdc-icon" data-icon="document" data-category="system"></i>
               <span class="mdc-list-item__text">File</span>
+            </a>
+
+            <a class="mdc-list-item" href="/tabs">
+              <i class="material-icons mdc-list-item__graphic wdc-icon" data-icon="document" data-category="system"></i>
+              <span class="mdc-list-item__text">Tabs</span>
             </a>
 
           </div>

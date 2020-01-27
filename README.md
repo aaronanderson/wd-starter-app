@@ -3,7 +3,9 @@
 
 # WD Start Kit - Reference Application using the Workday Canvas Kit
 
-This baseline application serves as a functional reference of the blending of several popular Java and Web technologies together. Often times with application development the most challenging aspect is technology selection and building a functional development environment. It is available for partial or full reuse. This application framework could be used to interact with Workday or other related services. 
+This baseline application serves as a functional reference of the blending of several popular Java and Web technologies together including the Workday Canvas Kit. Often times the hardest parts of starting the development of a new application are technology selection and building a functional development environment. This application is intended to help with both those issues and it is available for partial or full reuse. 
+
+This application framework could be used to interact with Workday or other related services. 
 
 ## Server Technologies
 [Java](https://www.oracle.com/technetwork/java/javase/overview/index.html)
@@ -32,17 +34,17 @@ This baseline application serves as a functional reference of the blending of se
 
 ## Running the Application
 
-[JDK 13](https://jdk.java.net/13/) and [Maven]() are required to build the project. All other dependencies should be automatically downloaded during the build process. Linux is required unless the package.json file is adjusted. nodejs and yarn should be installed for development but the Maven frontend plugin will automatically download them as part of the build process.
+[JDK 13](https://jdk.java.net/13/) and [Maven](https://maven.apache.org/) are required to build the project. All other dependencies should be automatically downloaded during the build process. Linux is required unless the package.json file is adjusted. nodejs and yarn should be installed for development but the Maven frontend plugin will automatically download them as part of the build process.
 
 1. Checkout the source code
 
 `git clone https://github.com/aaronanderson/wd-starter-app.git`
 
-1. Run the maven build
+2. Run the maven build
 
 `mvn clean install`
 
-1. Run Quarkus in devmode
+3. Run Quarkus in devmode
 
 ```
 cd server
@@ -52,11 +54,11 @@ mvn package quarkus:dev -Dquarkus.profile=dev
 Once the Quarkus server is running in devmode any changes to the Java resources, server/src, will trigger an automatic update.
 
 
-1. Access the application
+4. Access the application
 
 `http://localhost:5000`
 
-1. Run the webpack developer server
+5. Run the webpack developer server
 
 Make sure the Quarkus application server is running since the webpack dev server forwards API requests to it.
 
@@ -74,7 +76,7 @@ Access the dev server:
 Once the dev server is running any changes to the web source, web/src, will cause an immediate webpack incremental build and browser page update.
 
 
-1. Run the application in Docker (Optional) 
+6. Run the application in Docker (Optional) 
 
 ```
 cd server
@@ -86,7 +88,7 @@ docker run -i --rm -p 5000:5000 quarkus/wsa-app-jvm
 
 ## Considerations
 
-* The Workday Canvas Kit has components for both CSS and React. Even though there are more React components available now than CSS this application does not use React. Hopefully at some point in the future there will be feature parity between the components. After working with Polymer and LitElement I personally feel that React and the VDOM is antiquated especially with the shift of React development to React Hooks. Custom elements, events, shadow DOM, and HTML templates all orchestrated through LitElement is more efficient and productive in my view. A few Google Material Design web components are used to supplement the missing features in the CSS components such as the appheader, drawer, and tabs.  
+* The Workday Canvas Kit has components for both CSS and React. Even though there are more React components available now than CSS this application does not use React. Hopefully at some point in the future there will be feature parity between the components. After working with Polymer and LitElement I personally feel that React and the VDOM is antiquated especially with the shift of React development to React Hooks. Custom elements, events, shadow DOM, and HTML templates all orchestrated through LitElement is more efficient and productive in my view. A few Google Material Design web components are used to supplement the missing features in the CSS components. This includes the appheader, drawer, and tabs.  
 
 
 * If the Canvas Kit React components must be used then [pReact](https://preactjs.com/) can be added to this application using the methods outlined by this [sample application](https://github.com/aaronanderson/lit-react).
@@ -108,7 +110,6 @@ docker run -i --rm -p 5000:5000 quarkus/wsa-app-jvm
 
 * The Redux DevTools middleware is installed and can be accessed via the [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) Chrome extension.
 
-* The Redux 
 * The search bar and location update example are still a work in progress.
 
 * I used Eclipse and the [CodeMix 3]https://www.genuitec.com/products/codemix/() plugin to develop this application.

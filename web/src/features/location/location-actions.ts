@@ -11,9 +11,9 @@ export const READ_LOCATION = 'READ_LOCATION'
 export const READ_LOCATION_SUCCESS = 'READ_LOCATION_SUCCESS'
 export const READ_LOCATION_ERROR = 'READ_LOCATION_ERROR'
 
-export const PUT_LOCATION = 'PUT_LOCATION'
-export const PUT_LOCATION_SUCCESS = 'PUT_LOCATION_SUCCESS'
-export const PUT_LOCATION_ERROR = 'PUT_LOCATION_ERROR'
+export const PUT_LOCATIONS = 'PUT_LOCATIONS'
+export const PUT_LOCATIONS_SUCCESS = 'PUT_LOCATIONS_SUCCESS'
+export const PUT_LOCATIONS_ERROR = 'PUT_LOCATIONS_ERROR'
 
 
 export const UPDATE_LOCATION = 'UPDATE_LOCATION'
@@ -75,9 +75,9 @@ export const readLocation: any = (locationId: string) => async (dispatch: any) =
 	})
 		.then(data => { /*console.log(data);*/ dispatch({ type: READ_LOCATION_SUCCESS, payload: data.data.viewLocation }) })
 		.catch(error => { console.error(error); dispatch({ type: READ_LOCATION_ERROR, payload: error }) });
-
-
 }
+
+
 
 
 export const updateLocations: any = (puts: Set<Location>, removes: Set<Location>) => async (dispatch: any) => {
@@ -104,7 +104,7 @@ export const updateLocations: any = (puts: Set<Location>, removes: Set<Location>
 		.then(data => { /*console.log(data);*/ dispatch({ type: PUT_LOCATIONS_SUCCESS, payload: data!.data!.updateLocations }) })
 		.catch(error => /*console.error(error);*/ dispatch({ type: PUT_LOCATIONS_ERROR, payload: error }));
 
-
+}
 
 
  
