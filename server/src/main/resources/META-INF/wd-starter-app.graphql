@@ -1,0 +1,92 @@
+scalar Date
+
+scalar DateTime
+
+schema {
+    query:Query
+    mutation: Mutation
+}
+
+type Query {
+    
+    locations(limit: Int, nextToken: String): LocationConnection
+    
+    users(limit: Int, nextToken: String): UserConnection
+    
+}
+
+type Mutation {
+
+    createLocation(input: LocationInput): Location
+    
+}
+
+input LocationInput {
+    name: String!
+}
+
+type Location {
+    id: ID!
+    name: String!    
+}
+
+type LocationConnection {
+    locations: [Location]
+    nextToken: String
+}
+
+
+type LocationsFile implements File {
+  created: DateTime
+  modified: DateTime
+  fileName: String
+  path: String 
+}
+
+
+type Message {
+	severity: Severity
+	summary: String	
+}
+
+enum Severity {
+  INFO
+  WARNING
+  ERROR
+}
+
+enum ChangeType {
+  ADD
+  UPDATE
+  REMOVE
+  NONE
+}
+
+
+interface File {
+  created: DateTime
+  modified: DateTime
+  fileName: String
+  path: String
+}
+
+
+type UserConnection {
+    users: [User]
+    nextToken: String
+}
+
+type User {
+    id: ID!
+    name: String!
+    created: DateTime
+    modified: DateTime   
+    roleAssignments: [RoleAssignment] 
+}
+
+type RoleAssignment {
+    roleId: ID!
+    roleName: String!
+    constraint: String!        
+}
+

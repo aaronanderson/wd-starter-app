@@ -1,0 +1,204 @@
+@import "@workday/canvas-kit-css";
+@import "@workday/canvas-colors-web/dist/sass/canvas-colors-hex.scss";
+@import "fonts.scss";
+
+$mdc-theme-primary: $wdc-color-blueberry-400;
+$mdc-theme-secondary: $wdc-color-cantaloupe-400;
+$mdc-theme-on-primary: $wdc-color-french-vanilla-100;
+$mdc-theme-on-secondary: $wdc-color-french-vanilla-100;
+
+
+
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+
+
+//https://google.github.io/material-design-icons/#icon-font-for-the-web
+//fonts loaded outside of shadow dom in index.html but CSS still needed
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+:host {
+	font-family: 'Roboto', sans-serif;
+	//font-weight: 500;
+
+	//display: flex;
+	//height: 100vh;
+}
+
+.mdc-drawer-app-content {
+	flex: auto;
+	overflow: auto;
+	position: relative;
+}
+
+.main-content {
+	overflow: auto;
+	height: 100%;
+}
+
+.app-bar {
+	position: absolute;
+	box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.12);
+}
+
+// only apply this style if below top app bar
+.mdc-top-app-bar {
+	z-index: 7;
+}
+
+.mdc-top-app-bar--fixed-adjust{
+	//padding-top: 64px;
+	padding-top: 79px;
+}
+
+.wdc-page-header {
+
+	height: 109px;
+	//canvas kit default 
+	//height: 84px;
+}
+
+.wdc-page-header .wdc-page-sub-header-title {
+	font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 500;
+	font-size: 21px;
+	line-height: 27px;
+	color: rgb(255, 255, 255);
+	padding: 6px 0px;
+	margin: 0px;
+}
+
+.mdc-top-app-bar__title {
+	margin-left: 20px;
+	border-left: 1px solid rgba($wdc-color-french-vanilla-100, 0.3);
+}
+
+
+*[hidden] {
+	display: none;
+}
+
+.wsa-page-body {
+	padding: 18px 40px 18px 40px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.wsa-page-body>* {
+	margin-top: 40px;
+}
+
+
+ul.wsa-properties {
+	display: table;
+	border-spacing: 20px;
+
+}
+
+ul.wsa-properties>li {
+	display: table-row;
+
+}
+
+ul.wsa-properties>li> :first-child {
+	display: table-cell;
+	font-weight: bold;
+	margin: 10px;
+}
+
+ul.wsa-properties>li> :last-child {
+	display: table-cell
+}
+
+.wsa-upload-wrapper input[type=file] {
+	font-size: 42px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+
+.wsa-scroll {
+	display: block;
+	overflow: auto;
+	height: 1024px;
+	width: 90%;
+
+	margin-top: 0px;
+
+}
+
+.wsa-scroll .wdc-table {
+	white-space: pre-line;
+}
+
+table.wsa-table thead th {
+	position: sticky;
+	top: 0;
+	z-index: 99;
+}
+
+table.wsa-table tbody tr td:nth-child(-n+2) {
+	position: sticky;
+	left: 0;
+}
+
+table.wdc-table td.wsa-add,
+table.wdc-table tr.wsa-add td {
+	background-color: $wdc-color-green-apple-300 !important;
+}
+
+table.wdc-table td.wsa-remove,
+table.wdc-table tr.wsa-remove td {
+	background-color: $wdc-color-cinnamon-300 !important;
+}
+
+table.wdc-table td.wsa-change,
+table.wdc-table tr.wsa-change td {
+	background-color: $wdc-color-sour-lemon-300;
+}
+
+table.wdc-table td.wsa-none,
+table.wdc-table tr.wsa-none td {
+	background-color: inherit !important;
+}
+
+
+.wsa-env-dev {
+	color: #fff;
+	background-color: $wdc-color-watermelon-500;
+	
+}
+
+.wsa-env-qa {
+	color: #fff;
+	background-color: $wdc-color-cantaloupe-500;
+	padding: 3px;
+	
+}
+
