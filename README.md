@@ -3,34 +3,35 @@
 
 # WD Start Kit - Reference Application using the Workday Canvas Kit
 
-This baseline application serves as a functional reference of the blending of several popular Java and Web technologies together including the Workday Canvas Kit. Often times the hardest parts of starting the development of a new application are technology selection and building a functional development environment. This application is intended to help with both those issues and it is available for partial or full reuse. 
+This baseline application serves as a functional reference of the blending of several popular Java and Web technologies together including the Workday Canvas Kit. Often times technology selection and building a functional development environment are the most challenging tasks when designing and building a new application. This application is intended to help with both these concerns and it is available for partial or full reuse. 
 
 This application framework could be used to interact with Workday or other related services. 
 
 ## Server Technologies
-[Java](https://www.oracle.com/technetwork/java/javase/overview/index.html)
-[Quarkus](https://quarkus.io/)
-[Vert.x](https://vertx.io/)
-[Microprofile](https://microprofile.io/)
-[GraphQL](https://graphql.org/)
-[OIDC](https://developer.okta.com/docs/reference/api/oidc/)
-[Docker](https://www.docker.com/)
-[Maven](https://maven.apache.org/)
-[Maven Frontend Plugin](https://github.com/eirslett/frontend-maven-plugin)
+
+* [Java](https://www.oracle.com/technetwork/java/javase/overview/index.html)
+* [Quarkus](https://quarkus.io/)
+* [Vert.x](https://vertx.io/)
+* [Microprofile](https://microprofile.io/)
+* [GraphQL](https://graphql.org/)
+* [OIDC](https://developer.okta.com/docs/reference/api/oidc/)
+* [Docker](https://www.docker.com/)
+* [Maven](https://maven.apache.org/)
+* [Maven Frontend Plugin](https://github.com/eirslett/frontend-maven-plugin)
 
 ## Client Technologies
-[TypeScript](https://www.typescriptlang.org/)
-[LitElement](https://lit-element.polymer-project.org/)
-[Apollo GraphQL Client](https://www.apollographql.com/docs/react/)
-[Workday Canvas Kit](https://github.com/Workday/canvas-kit)
-[Material Design Web Components](https://material.io/develop/web/)
-[Vaadin Router](https://vaadin.com/router)
-[Redux](https://redux.js.org/)
-[Redux Thunk](https://github.com/reduxjs/redux-thunk)
-[ImmerJS](https://immerjs.github.io/immer/docs/introduction)
-[SCSS](https://sass-lang.com/)
-[Yarn](https://legacy.yarnpkg.com/en/)
-[WebPack](https://webpack.js.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [LitElement](https://lit-element.polymer-project.org/)
+* [Apollo GraphQL Client](https://www.apollographql.com/docs/react/)
+* [Workday Canvas Kit](https://github.com/Workday/canvas-kit)
+* [Material Design Web Components](https://material.io/develop/web/)
+* [Vaadin Router](https://vaadin.com/router)
+* [Redux](https://redux.js.org/)
+* [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+* [ImmerJS](https://immerjs.github.io/immer/docs/introduction)
+* [SCSS](https://sass-lang.com/)
+* [Yarn](https://legacy.yarnpkg.com/en/)
+* [WebPack](https://webpack.js.org/)
 
 ## Running the Application
 
@@ -88,7 +89,7 @@ docker run -i --rm -p 5000:5000 quarkus/wsa-app-jvm
 
 ## Considerations
 
-* The Workday Canvas Kit has components for both CSS and React. Even though there are more React components available now than CSS this application does not use React. Hopefully at some point in the future there will be feature parity between the components. After working with Polymer and LitElement I personally feel that React and the VDOM is antiquated especially with the shift of React development to React Hooks. Custom elements, events, shadow DOM, and HTML templates all orchestrated through LitElement is more efficient and productive in my view. A few Google Material Design web components are used to supplement the missing features in the CSS components. This includes the appheader, drawer, and tabs.  
+* The Workday Canvas Kit provides components for both CSS and React. Even though there are more React components available now than CSS this application does not use React. Hopefully at some point in the future there will be feature parity between the components. After working with Polymer and LitElement I personally feel that React and the VDOM are antiquated especially in light of the shift of React development to React Hooks. Custom elements, events, shadow DOM, and HTML templates all orchestrated through LitElement are more efficient and productive in my view. A few Google Material Design web components are used to supplement the missing features in the CSS components. This includes the appheader, drawer, and tabs.  
 
 
 * If the Canvas Kit React components must be used then [pReact](https://preactjs.com/) can be added to this application using the methods outlined by this [sample application](https://github.com/aaronanderson/lit-react).
@@ -100,9 +101,9 @@ docker run -i --rm -p 5000:5000 quarkus/wsa-app-jvm
 
 * Currently the Quarkus OAuth extension only supports service access with an existing bearer token and not the full OAuth Code Mechanism flow. Once Quarkus supports OAuth for web applications I will update this application with Workday SSO.
 
-* Using this [Maven plugin for generating JAX-WS API stubs](https://github.com/aaronanderson/wdutil/tree/master/wdjws-maven-plugin) this application could [interact with Workday](https://github.com/aaronanderson/wdutil/tree/master/wdjws-example) and perform various operations. To keep this application's build and dependencies simple an example of this integration is not included.
+* Using this [Maven plugin for generating JAX-WS API stubs](https://github.com/aaronanderson/wdutil/tree/master/wdjws-maven-plugin) this application could [interact with Workday](https://github.com/aaronanderson/wdutil/tree/master/wdjws-example) and perform various operations. To keep this application's build and dependencies simple an example of this integration was not included.
 
-* This application should work with Quarkus GraalVM [native image support](https://quarkus.io/guides/building-native-image) but it has not been tested. 
+* This application should work with Quarkus GraalVM [native image support](https://quarkus.io/guides/building-native-image) but this has not been tested. 
 
 * This application can be scaled in the AWS ECS environment as document by this [quarkus-ecs-example](https://github.com/aaronanderson/quarkus-ecs-example).
 
@@ -112,7 +113,7 @@ docker run -i --rm -p 5000:5000 quarkus/wsa-app-jvm
 
 * The search bar and location update example are still a work in progress.
 
-* I used Eclipse and the [CodeMix 3]https://www.genuitec.com/products/codemix/() plugin to develop this application.
+* I used Eclipse and the [CodeMix 3](https://www.genuitec.com/products/codemix/) plugin to develop this application.
 
 
 
